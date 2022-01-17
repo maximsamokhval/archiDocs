@@ -50,7 +50,7 @@ theme:
         name: Switch to light mode
   language: ru
   font:
-    text: Play
+    text: Ubuntu
     code: Roboto Mono
   icon:
     repo: fontawesome/brands/git
@@ -89,3 +89,11 @@ markdown_extensions:
 
 nav:
   - Начало: index.md
+  - 1С Разработка:
+    - Моделирование: 1CDevelopment/modeling.md
+    - Проектирование: 1CDevelopment/rec_of_structure.md
+  - Архитектура:
+    - Материалы: Architecture/index.md
+    - RFC Template: 
+        - Шаблон: Architecture/RFC/rfc-template.md
+        - RFC taskManager: Architecture/RFC/rfc-taskManager.md
