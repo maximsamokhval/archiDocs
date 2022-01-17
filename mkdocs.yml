@@ -1,0 +1,91 @@
+site_name: Материалы по проектированию 1С
+site_url: https://maximsamokhval.github.io/archiDocs/
+site_author: Maxim Samokhval
+site_description: Полезные статьи и документация по разработке на 1С:Предприятие
+repo_name: maximsamokhval/archiDocs
+repo_url: https://github.com/maximsamokhval/archiDocs/
+edit_uri: edit/main/docs
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/maksym_samokhval
+      name: Telegram me
+    - icon: fontawesome/brands/github
+      link: https://github.com/maximsamokhval
+
+copyright: Copyright &copy; 2022 Maxim Samokhval
+
+theme:
+  name: material
+
+  features:
+    - toc.integrate
+    - navigation.top
+    #- navigation.tabs
+    #- navigation.tabs.sticky
+    - navigation.sections
+    - navigation.instant
+    - navigation.tracking
+    #- navigation.expand
+    - header.autohide
+    - announce.dismiss
+    - search.highlight
+    - search.suggest
+    - search.share
+
+  palette:
+    - scheme: default
+      primary: orange
+      accent: light blue
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: orange
+      accent: deep orange
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
+  language: ru
+  font:
+    text: Play
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/git
+  plugins:
+    - tags
+    - social
+    - rss
+    - search:
+        lang:
+          - en
+          - ru
+
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - md_in_html
+  - def_list
+  - footnotes
+  - tables
+  - meta
+  - md_in_html
+  - pymdownx.betterem
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.snippets
+  - toc:
+      permalink: true
+
+nav:
+  - Начало: index.md
