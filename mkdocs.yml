@@ -37,22 +37,23 @@ theme:
 
   palette:
     - scheme: default
-      primary: orange
+      primary: teal
       accent: light blue
       toggle:
-        icon: material/lightbulb-outline
+        icon: material/weather-sunny
         name: Switch to dark mode
     - scheme: slate
-      primary: orange
+      primary: teal
       accent: deep orange
       toggle:
-        icon: material/lightbulb
+        icon: material/weather-night
         name: Switch to light mode
   language: ru
   font:
     text: Ubuntu
     code: Roboto Mono
   icon:
+    logo: material/library-shelves
     repo: fontawesome/brands/git
   plugins:
     - tags
@@ -90,10 +91,10 @@ markdown_extensions:
 nav:
   - Начало: index.md
   - 1С Разработка:
-    - Моделирование: 1CDevelopment/modeling.md
-    - Проектирование: 1CDevelopment/rec_of_structure.md
+      - Моделирование: 1CDevelopment/modeling.md
+      - Проектирование: 1CDevelopment/rec_of_structure.md
   - Архитектура:
-    - Материалы: Architecture/index.md
-    - RFC Template: 
-        - Шаблон: Architecture/RFC/rfc-template.md
-        - RFC taskManager: Architecture/RFC/rfc-taskManager.md
+      - Материалы: Architecture/index.md
+      - RFC Template:
+          - Шаблон: Architecture/RFC/rfc-template.md
+          - RFC taskManager: Architecture/RFC/rfc-taskManager.md
