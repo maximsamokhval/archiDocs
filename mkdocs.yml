@@ -95,6 +95,12 @@ nav:
       - Проектирование: 1CDevelopment/rec_of_structure.md
   - Архитектура:
       - Материалы: Architecture/index.md
+      - Атрибуты качества: 
+          - Внешние аттрибуты качества:
+              - Architecture/QualityAttributes/ExtrenalAttributes/availability.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/installability.md
+          - Внутренние аттрибуты качества:
+              - Architecture/QualityAttributes/modifiability.md 
       - RFC Template:
           - Шаблон: Architecture/RFC/rfc-template.md
           - RFC taskManager: Architecture/RFC/rfc-taskManager.md
