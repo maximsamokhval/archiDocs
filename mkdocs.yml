@@ -99,8 +99,22 @@ nav:
           - Внешние аттрибуты качества:
               - Architecture/QualityAttributes/ExtrenalAttributes/availability.md
               - Architecture/QualityAttributes/ExtrenalAttributes/installability.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/integrity.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/interoperability.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/performance.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/reliability.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/robustness.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/safety.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/secutity.md
+              - Architecture/QualityAttributes/ExtrenalAttributes/usability.md
           - Внутренние аттрибуты качества:
-              - Architecture/QualityAttributes/modifiability.md 
+              - Architecture/QualityAttributes/InternalAttributes/modifiability.md
+              - Architecture/QualityAttributes/InternalAttributes/efficiency.md
+              - Architecture/QualityAttributes/InternalAttributes/portability.md
+              - Architecture/QualityAttributes/InternalAttributes/reusability.md
+              - Architecture/QualityAttributes/InternalAttributes/scalability.md
+              - Architecture/QualityAttributes/InternalAttributes/verifyability.md
+
       - RFC Template:
           - Шаблон: Architecture/RFC/rfc-template.md
           - RFC taskManager: Architecture/RFC/rfc-taskManager.md
