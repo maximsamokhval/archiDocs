@@ -95,6 +95,8 @@ nav:
       - Проектирование: 1CDevelopment/rec_of_structure.md
   - Architecture:
       - Материалы: Architecture/index.md
+      - NFR: 
+        - NFR template: Architecture/NFR/Template/index.md
       - Атрибуты качества: 
           - Внешние аттрибуты качества:
               - Architecture/QualityAttributes/ExtrenalAttributes/availability.md
