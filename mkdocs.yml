@@ -1,4 +1,4 @@
-site_name: Материалы по проектированию 1С
+site_name: Материалы по проектированию и управлению качеством
 site_url: https://maximsamokhval.github.io/archiDocs/
 site_author: Maxim Samokhval
 site_description: Полезные статьи и документация по разработке на 1С:Предприятие
@@ -23,7 +23,7 @@ theme:
   features:
     - toc.integrate
     - navigation.top
-    #- navigation.tabs
+    - navigation.tabs
     #- navigation.tabs.sticky
     - navigation.sections
     - navigation.instant
@@ -93,7 +93,7 @@ nav:
   - 1С Разработка:
       - Моделирование: 1CDevelopment/modeling.md
       - Проектирование: 1CDevelopment/rec_of_structure.md
-  - Архитектура:
+  - Architecture:
       - Материалы: Architecture/index.md
       - Атрибуты качества: 
           - Внешние аттрибуты качества:
