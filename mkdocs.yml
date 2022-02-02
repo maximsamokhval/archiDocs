@@ -7,7 +7,7 @@ repo_url: https://github.com/maximsamokhval/archiDocs/
 edit_uri: edit/main/docs
 
 extra:
-  generator: false
+  generator: true
   social:
     - icon: fontawesome/brands/telegram
       link: https://t.me/maksym_samokhval
