@@ -78,7 +78,13 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      preserve_tabs: true
+      custom_fences:
+        # Mermaid diagrams
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.keys
   - pymdownx.tabbed:
       alternate_style: true
@@ -87,7 +93,10 @@ markdown_extensions:
   - pymdownx.snippets
   - toc:
       permalink: true
-
+extra_javascript:
+  - optionalConfig.js
+  - https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js
+  - extra-loader.js
 nav:
   - Начало: index.md
   - 1С Разработка:
@@ -95,9 +104,10 @@ nav:
       - Проектирование: 1CDevelopment/rec_of_structure.md
   - Architecture:
       - Материалы: Architecture/index.md
-      - NFR: 
-        - NFR template: Architecture/NFR/Template/index.md
-      - Атрибуты качества: 
+      - NFR:
+          - NFR template: Architecture/NFR/Template/index.md
+      - Атрибуты качества:
+          - Ограничения: Architecture/QualityAttributes/constraint.md 
           - Внешние аттрибуты качества:
               - Architecture/QualityAttributes/ExtrenalAttributes/availability.md
               - Architecture/QualityAttributes/ExtrenalAttributes/installability.md
