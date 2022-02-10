@@ -23,3 +23,4 @@
     - [Youtube блог Mark Richards](https://www.youtube.com/channel/UC-Z7T0lAq_xECevIz8E5R5w/featured)
     - [Youtube Architecture Kata #1 - Разбор с экспертом [Как работает настоящий Solution Architect]](https://youtu.be/6MDKKuqn07A)
     - [GitHub Architecture Katas](https://github.com/team7katas/sysopsquad)
+    - [mellarius](https://mellarius.ru/) - хороший сайт по архитектуре/процессам/devops/CICD
