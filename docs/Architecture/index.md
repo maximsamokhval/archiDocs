@@ -13,8 +13,6 @@
 
 Регулярная фиксация принятых и непринятых в ходе разработки программного обеспечения решений, затрагивающих дизайн, проектирование, выбор инструментов и подходов, и отвечающих определенным функциональным или нефункциональным требованиям.
 
-++ctrl+alt+delete++
-
 
 !!! example "Ссылки"
     - [ADR Tools](https://github.com/npryce/adr-tools)
@@ -24,3 +22,7 @@
     - [Youtube Architecture Kata #1 - Разбор с экспертом [Как работает настоящий Solution Architect]](https://youtu.be/6MDKKuqn07A)
     - [GitHub Architecture Katas](https://github.com/team7katas/sysopsquad)
     - [mellarius](https://mellarius.ru/) - хороший сайт по архитектуре/процессам/devops/CICD
+    - [Portfolio Architecture - Examples](https://gitlab.com/redhatdemocentral/portfolio-architecture-examples) - Red Hat Portfolio Architecture Examples.This repository provides examples of customer implementations using Red Hat product portfolio. These architectural blueprints can be used as is or adapted to meet the customer requirements. The architectural diagrams are created using the open source tool draw.io.
+    - [C4 Model with Archimate](https://www.archimatetool.com/blog/2020/04/18/c4-model-architecture-viewpoint-and-archi-4-7/)
+    - [Archimate container image for CI](https://github.com/marketplace/actions/deploy-archi-report)
+    - [Awesome CTO](https://github.com/kuchin/awesome-cto) - Подборка ссылок на полезные статьи и репозитории, необходимые для CTO. A curated and opinionated list of resources for Chief Technology Officers and VP R&D, with the emphasis on startups and hyper-growth companies.
