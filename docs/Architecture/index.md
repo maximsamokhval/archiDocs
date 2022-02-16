@@ -26,3 +26,4 @@
     - [C4 Model with Archimate](https://www.archimatetool.com/blog/2020/04/18/c4-model-architecture-viewpoint-and-archi-4-7/)
     - [Archimate container image for CI](https://github.com/marketplace/actions/deploy-archi-report)
     - [Awesome CTO](https://github.com/kuchin/awesome-cto) - Подборка ссылок на полезные статьи и репозитории, необходимые для CTO. A curated and opinionated list of resources for Chief Technology Officers and VP R&D, with the emphasis on startups and hyper-growth companies.
+    - [Understanding Quality Attributes](https://www.cs.unb.ca/~wdu/cs6075w10/sa2.htm)
