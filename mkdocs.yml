@@ -102,15 +102,17 @@ nav:
   - 1С Разработка:
       - Моделирование: 1CDevelopment/modeling.md
       - Проектирование: 1CDevelopment/rec_of_structure.md
+  - Development:
+      - Software Estimation: Development/index.md
   - Architecture:
       - Материалы: Architecture/index.md
       - Документы:
-        - Список документов: Architecture/Documents/index.md
-        - Документ о концепции и границах проекта: Architecture/Documents/Документ-о-концепции-и-границах-проекта.md
+          - Список документов: Architecture/Documents/index.md
+          - Документ о концепции и границах проекта: Architecture/Documents/Документ-о-концепции-и-границах-проекта.md
       - NFR:
           - NFR template: Architecture/NFR/Template/index.md
       - Атрибуты качества:
-          - Ограничения: Architecture/QualityAttributes/constraint.md 
+          - Ограничения: Architecture/QualityAttributes/constraint.md
           - Внешние аттрибуты качества:
               - Architecture/QualityAttributes/ExtrenalAttributes/availability.md
               - Architecture/QualityAttributes/ExtrenalAttributes/installability.md
@@ -133,3 +135,6 @@ nav:
       - RFC Template:
           - Шаблон: Architecture/RFC/rfc-template.md
           - RFC taskManager: Architecture/RFC/rfc-taskManager.md
+  - Wiki:
+      - Терминология:
+          - Ортогональность: Wiki/orto.md
