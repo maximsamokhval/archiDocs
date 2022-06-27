@@ -13,6 +13,10 @@
 
 Регулярная фиксация принятых и непринятых в ходе разработки программного обеспечения решений, затрагивающих дизайн, проектирование, выбор инструментов и подходов, и отвечающих определенным функциональным или нефункциональным требованиям.
 
+!!! example "Статьи"
+    - [Эволюционная архитектура на практике](https://apolomodov.medium.com/evolutionary-architecture-introduction-a06cfd4b9aa5)
+    - [Курс Essential Architecture #Code](https://apolomodov.medium.com/essential-arch-course-code-477b92fb6ba7)
+    - [Kent Beck. Blog](https://medium.com/@kentbeck_7670)
 
 !!! example "Ссылки"
     - [ADR Tools](https://github.com/npryce/adr-tools)
