@@ -17,6 +17,9 @@
     - [Эволюционная архитектура на практике](https://apolomodov.medium.com/evolutionary-architecture-introduction-a06cfd4b9aa5)
     - [Курс Essential Architecture #Code](https://apolomodov.medium.com/essential-arch-course-code-477b92fb6ba7)
     - [Kent Beck. Blog](https://medium.com/@kentbeck_7670)
+    - [Эффективные способы описания архитектуры](https://scrumtrek.ru/blog/technical-excellence/1038/effektivnye-sposoby-opisaniya-arhitektury/)
+    - [Метафора системы и архитектура](http://agilemindset.ru/%d0%bc%d0%b5%d1%82%d0%b0%d1%84%d0%be%d1%80%d0%b0-%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc%d1%8b-%d0%b8-%d0%b0%d1%80%d1%85%d0%b8%d1%82%d0%b5%d0%ba%d1%82%d1%83%d1%80%d0%b0/)
+    - [AGILE MINDSET Микросервисы, архитектура, devops и agile](http://agilemindset.ru/category/%d0%b0%d1%80%d1%85%d0%b8%d1%82%d0%b5%d0%ba%d1%82%d1%83%d1%80%d0%b0/)
 
 !!! example "Ссылки"
     - [ADR Tools](https://github.com/npryce/adr-tools)
