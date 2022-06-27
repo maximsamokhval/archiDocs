@@ -106,12 +106,14 @@ nav:
       - Software Estimation: Development/index.md
   - Architecture:
       - Материалы: Architecture/index.md
+      - Заметки: Architecture/Notes/index.md 
       - Документы:
           - Список документов: Architecture/Documents/index.md
           - Документ о концепции и границах проекта: Architecture/Documents/Документ-о-концепции-и-границах-проекта.md
       - NFR:
           - NFR template: Architecture/NFR/Template/index.md
       - Атрибуты качества:
+          - Список атрибутов: Architecture/QualityAttributes/index.md
           - Ограничения: Architecture/QualityAttributes/constraint.md
           - Внешние аттрибуты качества:
               - Architecture/QualityAttributes/ExtrenalAttributes/availability.md
