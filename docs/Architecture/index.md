@@ -38,3 +38,9 @@
     - [Awesome CTO](https://github.com/kuchin/awesome-cto) - Подборка ссылок на полезные статьи и репозитории, необходимые для CTO. A curated and opinionated list of resources for Chief Technology Officers and VP R&D, with the emphasis on startups and hyper-growth companies.
     - [Understanding Quality Attributes](https://www.cs.unb.ca/~wdu/cs6075w10/sa2.htm)
     - [Developer to Architect. Mark Richards](https://www.developertoarchitect.com/)
+    - [ArchDays 2020 • Как мы в Tinkoff принимаем архитектурные решения • Александр Поломодов (Tinkoff)](https://youtu.be/-KMWmXTr2LE) - В этом докладе я попробую рассказать про наш подход к этому вопросу. В докладе будут рассмотрены моменты:
+        - что такое архитектура и чем она отличается от проектирования
+        - какие архитектуры и архитекторы бывают
+        - как дела в software architecture в 2020
+        - архитектура в виде процесса масштабируемого подхода к принятию решений преимущественно внутри команд
+        - пререквизиты к тому, чтобы архитектура и архитектурные решения были консистентными
