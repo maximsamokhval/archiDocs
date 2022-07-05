@@ -25,11 +25,15 @@
 
 
 !!! example "Ссылки"
+    - [Reference Architecture Examples and Best Practices](https://aws.amazon.com/architecture/)
+    - [Google Cloud Reference Architectures and Diagrams](https://cloud.google.com/architecture)
+    - [Browse Azure Architectures](https://docs.microsoft.com/en-us/azure/architecture/browse/)
     - [ADR Tools](https://github.com/npryce/adr-tools)
     - [Реестр архитектурных решений](https://pragmatic-km.guide/practices/knowledge-registration/registration/architecture.html)
     - [Markdown Architectural Decision Records](https://adr.github.io/madr/)
     - [Youtube блог Mark Richards](https://www.youtube.com/channel/UC-Z7T0lAq_xECevIz8E5R5w/featured)
     - [Youtube Architecture Kata #1 - Разбор с экспертом [Как работает настоящий Solution Architect]](https://youtu.be/6MDKKuqn07A)
+    - [Quality attributes in Software Architecture](https://medium.com/@nvashanin/quality-attributes-in-software-architecture-3844ea482732)
     - [GitHub Architecture Katas](https://github.com/team7katas/sysopsquad)
     - [mellarius](https://mellarius.ru/) - хороший сайт по архитектуре/процессам/devops/CICD
     - [Portfolio Architecture - Examples](https://gitlab.com/redhatdemocentral/portfolio-architecture-examples) - Red Hat Portfolio Architecture Examples.This repository provides examples of customer implementations using Red Hat product portfolio. These architectural blueprints can be used as is or adapted to meet the customer requirements. The architectural diagrams are created using the open source tool draw.io.
@@ -43,4 +47,10 @@
         - какие архитектуры и архитекторы бывают
         - как дела в software architecture в 2020
         - архитектура в виде процесса масштабируемого подхода к принятию решений преимущественно внутри команд
-        - пререквизиты к тому, чтобы архитектура и архитектурные решения были консистентными
+        - пререквизиты к тому, чтобы архитектура и архитектурные решения были консистентными 
+    - [Site Reliability Engineer (SRE) Interview Preparation Guide](https://github.com/mxssl/sre-interview-prep-guide) - This repository is an attempt to consolidate useful resources for Site Reliability Engineer (SRE) interview preparation.
+    - [Emerging Reference Architectural Patterns](https://github.com/wso2/reference-architecture)
+
+
+
+
