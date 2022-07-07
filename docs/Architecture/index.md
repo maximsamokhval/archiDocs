@@ -29,6 +29,7 @@
     - [Google Cloud Reference Architectures and Diagrams](https://cloud.google.com/architecture)
     - [Browse Azure Architectures](https://docs.microsoft.com/en-us/azure/architecture/browse/)
     - [ADR Tools](https://github.com/npryce/adr-tools)
+    - [Кто такой solution architect?](http://architectvelichko.com/)
     - [Реестр архитектурных решений](https://pragmatic-km.guide/practices/knowledge-registration/registration/architecture.html)
     - [Markdown Architectural Decision Records](https://adr.github.io/madr/)
     - [Youtube блог Mark Richards](https://www.youtube.com/channel/UC-Z7T0lAq_xECevIz8E5R5w/featured)
