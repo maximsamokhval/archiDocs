@@ -21,6 +21,7 @@
     - [Метафора системы и архитектура](http://agilemindset.ru/%d0%bc%d0%b5%d1%82%d0%b0%d1%84%d0%be%d1%80%d0%b0-%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc%d1%8b-%d0%b8-%d0%b0%d1%80%d1%85%d0%b8%d1%82%d0%b5%d0%ba%d1%82%d1%83%d1%80%d0%b0/)
     - [AGILE MINDSET Микросервисы, архитектура, devops и agile](http://agilemindset.ru/category/%d0%b0%d1%80%d1%85%d0%b8%d1%82%d0%b5%d0%ba%d1%82%d1%83%d1%80%d0%b0/)
     - [5 диаграмм, необходимых для документирования архитектуры решений](https://habr.com/ru/company/epam_systems/blog/538018/)
+    - [Web page for BA sharing of experience and knowledge](https://babokpage.wordpress.com/)
 
 
 
