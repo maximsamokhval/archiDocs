@@ -36,6 +36,7 @@
     - [Youtube Architecture Kata #1 - Разбор с экспертом [Как работает настоящий Solution Architect]](https://youtu.be/6MDKKuqn07A)
     - [Quality attributes in Software Architecture](https://medium.com/@nvashanin/quality-attributes-in-software-architecture-3844ea482732)
     - [GitHub Architecture Katas](https://github.com/team7katas/sysopsquad)
+    - [GitHub Architectural Kata Autumn 2021 - The Archangels](https://github.com/tekiegirl/Archangels)
     - [mellarius](https://mellarius.ru/) - хороший сайт по архитектуре/процессам/devops/CICD
     - [Portfolio Architecture - Examples](https://gitlab.com/redhatdemocentral/portfolio-architecture-examples) - Red Hat Portfolio Architecture Examples.This repository provides examples of customer implementations using Red Hat product portfolio. These architectural blueprints can be used as is or adapted to meet the customer requirements. The architectural diagrams are created using the open source tool draw.io.
     - [C4 Model with Archimate](https://www.archimatetool.com/blog/2020/04/18/c4-model-architecture-viewpoint-and-archi-4-7/)
