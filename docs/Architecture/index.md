@@ -31,6 +31,7 @@
     - [Browse Azure Architectures](https://docs.microsoft.com/en-us/azure/architecture/browse/)
     - [ADR Tools](https://github.com/npryce/adr-tools)
     - [DOCUMENTING ARCHITECTURE DECISIONS](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
+    - [Archimate-examples](https://www.hosiaisluoma.fi/blog/category/archimate-examples/)
     - [Кто такой solution architect?](http://architectvelichko.com/)
     - [Реестр архитектурных решений](https://pragmatic-km.guide/practices/knowledge-registration/registration/architecture.html)
     - [Markdown Architectural Decision Records](https://adr.github.io/madr/)
