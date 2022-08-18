@@ -27,9 +27,12 @@
 
 !!! example "Ссылки"
     - [Reference Architecture Examples and Best Practices](https://aws.amazon.com/architecture/)
+    - [Using architectural decision records to streamline technical decision-making for a software development project](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/welcome.html)
     - [Google Cloud Reference Architectures and Diagrams](https://cloud.google.com/architecture)
     - [Browse Azure Architectures](https://docs.microsoft.com/en-us/azure/architecture/browse/)
+    - [Kappa Architecture](http://milinda.pathirage.org/kappa-architecture.com/) - Kappa Architecture is a software architecture pattern. Rather than using a relational DB like SQL or a key-value store like Cassandra, the canonical data store in a Kappa Architecture system is an append-only immutable log. From the log, data is streamed through a computational system and fed into auxiliary stores for serving.
     - [ADR Tools](https://github.com/npryce/adr-tools)
+    - [Continuous Architecture Principles](https://continuousarchitecture.com/continuous-architecture-principles/) - These six principles help architects to focus on the most important aspects of software architecture for modern applications, while working in the incremental and evolving way that supports Agile and DevOps ways of working.
     - [DOCUMENTING ARCHITECTURE DECISIONS](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
     - [Archimate-examples](https://www.hosiaisluoma.fi/blog/category/archimate-examples/)
     - [Кто такой solution architect?](http://architectvelichko.com/)
