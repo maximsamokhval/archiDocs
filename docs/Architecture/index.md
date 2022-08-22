@@ -22,6 +22,11 @@
     - [AGILE MINDSET Микросервисы, архитектура, devops и agile](http://agilemindset.ru/category/%d0%b0%d1%80%d1%85%d0%b8%d1%82%d0%b5%d0%ba%d1%82%d1%83%d1%80%d0%b0/)
     - [5 диаграмм, необходимых для документирования архитектуры решений](https://habr.com/ru/company/epam_systems/blog/538018/)
     - [Web page for BA sharing of experience and knowledge](https://babokpage.wordpress.com/)
+    - [Системное мышление](https://less.works/ru/less/principles/systems-thinking.html) - Закон Вайнберга-Брукса: От действий менеджеров, основанных на неправильных моделях системы, пострадало больше проектов, чем от всех остальных причин вместе взятых.
+
+
+!!! example "Tools"
+  - [DocHub](https://dochub.info/main) - DocHub - инструмент описания архитектуры через код (Architecture as a code). Код   архитектуры - ансамбль файлов на языках, решающих задачу описания архитектуры. 
 
 
 
@@ -59,7 +64,7 @@
     - [Site Reliability Engineer (SRE) Interview Preparation Guide](https://github.com/mxssl/sre-interview-prep-guide) - This repository is an attempt to consolidate useful resources for Site Reliability Engineer (SRE) interview preparation.
     - [Emerging Reference Architectural Patterns](https://github.com/wso2/reference-architecture)
     - [Методология как конструктор: инструкция по сборке / Филипп Дельгядо](https://youtu.be/Jt2C4ta1rEo) - Все проекты разные, все команды непохожи друг на друга, все лидеры неповторимы. И нет какой-то одной подходящей для всех методологии, всегда нужно делать что-то уникальное и индивидуальное
-    - [Системное мышление](https://less.works/ru/less/principles/systems-thinking.html) - **Закон Вайнберга-Брукса**: От действий менеджеров, основанных на неправильных моделях системы, пострадало больше проектов, чем от всех остальных причин вместе взятых.
+
 
 
 
