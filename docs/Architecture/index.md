@@ -23,6 +23,7 @@
     - [5 диаграмм, необходимых для документирования архитектуры решений](https://habr.com/ru/company/epam_systems/blog/538018/)
     - [Web page for BA sharing of experience and knowledge](https://babokpage.wordpress.com/)
     - [Системное мышление](https://less.works/ru/less/principles/systems-thinking.html) - Закон Вайнберга-Брукса: От действий менеджеров, основанных на неправильных моделях системы, пострадало больше проектов, чем от всех остальных причин вместе взятых.
+    - [Архитектура архитектуры архитектора](https://habr.com/ru/post/544586/) - 
 
 
 !!! example "Tools"

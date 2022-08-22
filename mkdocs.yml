@@ -106,7 +106,7 @@ nav:
       - Software Estimation: Development/index.md
   - Architecture:
       - Материалы: Architecture/index.md
-      - Заметки: Architecture/Notes/index.md 
+      - Заметки: Architecture/Notes/index.md
       - Документы:
           - Список документов: Architecture/Documents/index.md
           - Документ о концепции и границах проекта: Architecture/Documents/Документ-о-концепции-и-границах-проекта.md
@@ -140,3 +140,4 @@ nav:
   - Wiki:
       - Терминология:
           - Ортогональность: Wiki/orto.md
+          - Глоссарий: Wiki/glossary.md
