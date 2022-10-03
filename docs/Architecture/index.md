@@ -24,6 +24,8 @@
     - [Web page for BA sharing of experience and knowledge](https://babokpage.wordpress.com/)
     - [Системное мышление](https://less.works/ru/less/principles/systems-thinking.html) - Закон Вайнберга-Брукса: От действий менеджеров, основанных на неправильных моделях системы, пострадало больше проектов, чем от всех остальных причин вместе взятых.
     - [Архитектура архитектуры архитектора](https://habr.com/ru/post/544586/) - 
+    - [The Red Hat Portfolio Architecture Center](https://www.redhat.com/architect/portfolio/?extIdCarryOver=true&intcmp=7013a0000025wJwAAI)
+    - [portfolio-architecture-examples](https://gitlab.com/redhatdemocentral/portfolio-architecture-examples/-/tree/main)
 
 
 !!! example "Tools"
