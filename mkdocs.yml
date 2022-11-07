@@ -102,6 +102,7 @@ nav:
   - 1С Разработка:
       - Моделирование: 1CDevelopment/modeling.md
       - Проектирование: 1CDevelopment/rec_of_structure.md
+      - Ограничения: 1CDevelopment/Vliyanie_ogranichenij_dliny_klyucha_indeksov.md
   - Development:
       - Software Estimation: Development/index.md
   - Architecture:
