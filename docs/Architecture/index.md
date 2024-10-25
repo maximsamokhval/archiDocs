@@ -7,7 +7,8 @@
 
 - [RFC documents contain technical specifications and organizational notes for the Internet](https://www.ietf.org/standards/rfcs/)
 - [Типичные ошибки архитектора, или Как перестать бояться и полюбить RFC](https://habr.com/ru/company/dododev/blog/578052/)
-- [Шаблон RFC](RFC/rfc-template/)
+- [Шаблон RFC](RFC/rfc-template.md)
+
 
 ### ADR - Architecture decision record
 
@@ -49,7 +50,7 @@
     - [Youtube блог Mark Richards](https://www.youtube.com/channel/UC-Z7T0lAq_xECevIz8E5R5w/featured)
     - [Youtube Architecture Kata #1 - Разбор с экспертом [Как работает настоящий Solution Architect]](https://youtu.be/6MDKKuqn07A)
     - [Quality attributes in Software Architecture](https://medium.com/@nvashanin/quality-attributes-in-software-architecture-3844ea482732)
-    - [GitHub Architecture Katas](https://github.com/team7katas/sysopsquad)
+    - [GitHub Architecture Katas](https://github.com/team7katas/sysopsquad) - The Sysops Squad Architectural Kata by O'Reilly, April - May 2021
     - [GitHub Architectural Kata Autumn 2021 - The Archangels](https://github.com/tekiegirl/Archangels)
     - [mellarius](https://mellarius.ru/) - хороший сайт по архитектуре/процессам/devops/CICD
     - [Portfolio Architecture - Examples](https://gitlab.com/redhatdemocentral/portfolio-architecture-examples) - Red Hat Portfolio Architecture Examples.This repository provides examples of customer implementations using Red Hat product portfolio. These architectural blueprints can be used as is or adapted to meet the customer requirements. The architectural diagrams are created using the open source tool draw.io.
@@ -66,6 +67,8 @@
         - пререквизиты к тому, чтобы архитектура и архитектурные решения были консистентными 
     - [Site Reliability Engineer (SRE) Interview Preparation Guide](https://github.com/mxssl/sre-interview-prep-guide) - This repository is an attempt to consolidate useful resources for Site Reliability Engineer (SRE) interview preparation.
     - [Emerging Reference Architectural Patterns](https://github.com/wso2/reference-architecture)
+    - [Архитектурные ката](https://github.com/TheKataLog) - победители архитектурных ката
+    - [Architecture Worksheet Downloads](https://www.developertoarchitect.com/downloads/worksheets.html) - шаблоны архитектурных документов
     - [Методология как конструктор: инструкция по сборке / Филипп Дельгядо](https://youtu.be/Jt2C4ta1rEo) - Все проекты разные, все команды непохожи друг на друга, все лидеры неповторимы. И нет какой-то одной подходящей для всех методологии, всегда нужно делать что-то уникальное и индивидуальное
 
 

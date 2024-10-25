@@ -106,14 +106,18 @@ nav:
   - Development:
       - Software Estimation: Development/index.md
   - Architecture:
-      - Шаблоны: Templates/InterviewQuestions.md
-      - Материалы: Architecture/index.md
+      - Материалы: Architecture/index.md     
+      - ADR: 
+          - Architecture/ADR/000 adr-example.md
+          - Architecture/ADR/001 adr template.md
       - Заметки: Architecture/Notes/index.md
       - Документы:
           - Список документов: Architecture/Documents/index.md
           - Документ о концепции и границах проекта: Architecture/Documents/Документ-о-концепции-и-границах-проекта.md
       - NFR:
           - NFR template: Architecture/NFR/Template/index.md
+      - Шаблоны: 
+          - Templates/InterviewQuestions.md    
       - Атрибуты качества:
           - Список атрибутов: Architecture/QualityAttributes/index.md
           - Ограничения: Architecture/QualityAttributes/constraint.md
