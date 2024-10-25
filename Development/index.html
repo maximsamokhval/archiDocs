@@ -1,0 +1,2160 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Полезные статьи и документация по разработке на 1С:Предприятие">
+      
+      
+        <meta name="author" content="Maxim Samokhval">
+      
+      
+        <link rel="canonical" href="https://maximsamokhval.github.io/archiDocs/Development/">
+      
+      
+        <link rel="prev" href="../1CDevelopment/Vliyanie_ogranichenij_dliny_klyucha_indeksov/">
+      
+      
+        <link rel="next" href="../Architecture/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Software Estimation - Материалы по проектированию и управлению качеством</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Ubuntu";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#software-estimation-demystifying-the-black-art" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="Материалы по проектированию и управлению качеством" class="md-header__button md-logo" aria-label="Материалы по проектированию и управлению качеством" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 9V1.5h-3V9h-3V1.5h-3V9h-3V1.5H4.65V9H3v1.5h18V9zm0 4.5h-3V21h-3v-7.5h-3V21h-3v-7.5H4.65V21H3v1.5h18V21h-1.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Материалы по проектированию и управлению качеством
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Software Estimation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/maximsamokhval/archiDocs/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M216.29 158.39H137C97 147.9 6.51 150.63 6.51 233.18c0 30.09 15 51.23 35 61-25.1 23-37 33.85-37 49.21 0 11 4.47 21.14 17.89 26.81C8.13 383.61 0 393.35 0 411.65c0 32.11 28.05 50.82 101.63 50.82 70.75 0 111.79-26.42 111.79-73.18 0-58.66-45.16-56.5-151.63-63l13.43-21.55c27.27 7.58 118.7 10 118.7-67.89 0-18.7-7.73-31.71-15-41.07l37.41-2.84zm-63.42 241.9c0 32.06-104.89 32.1-104.89 2.43 0-8.14 5.27-15 10.57-21.54 77.71 5.3 94.32 3.37 94.32 19.11m-50.81-134.58c-52.8 0-50.46-71.16 1.2-71.16 49.54 0 50.82 71.16-1.2 71.16m133.3 100.51v-32.1c26.75-3.66 27.24-2 27.24-11V203.61c0-8.5-2.05-7.38-27.24-16.26l4.47-32.92H324v168.71c0 6.51.4 7.32 6.51 8.14l20.73 2.84v32.1zm52.45-244.31c-23.17 0-36.59-13.43-36.59-36.61s13.42-35.77 36.59-35.77c23.58 0 37 12.62 37 35.77s-13.42 36.61-37 36.61M512 350.46c-17.49 8.53-43.1 16.26-66.28 16.26-48.38 0-66.67-19.5-66.67-65.46V194.75c0-5.42 1.05-4.06-31.71-4.06V154.5c35.78-4.07 50-22 54.47-66.27h38.63c0 65.83-1.34 61.81 3.26 61.81H501v40.65h-60.56v97.15c0 6.92-4.92 51.41 60.57 26.84z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    maximsamokhval/archiDocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Начало
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../1CDevelopment/modeling/" class="md-tabs__link">
+          
+  
+  1С Разработка
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Architecture/" class="md-tabs__link">
+          
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Wiki/orto/" class="md-tabs__link">
+          
+  
+  Wiki
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Материалы по проектированию и управлению качеством" class="md-nav__button md-logo" aria-label="Материалы по проектированию и управлению качеством" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 9V1.5h-3V9h-3V1.5h-3V9h-3V1.5H4.65V9H3v1.5h18V9zm0 4.5h-3V21h-3v-7.5h-3V21h-3v-7.5H4.65V21H3v1.5h18V21h-1.5z"/></svg>
+
+    </a>
+    Материалы по проектированию и управлению качеством
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/maximsamokhval/archiDocs/" title="Перейти к репозиторию" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M216.29 158.39H137C97 147.9 6.51 150.63 6.51 233.18c0 30.09 15 51.23 35 61-25.1 23-37 33.85-37 49.21 0 11 4.47 21.14 17.89 26.81C8.13 383.61 0 393.35 0 411.65c0 32.11 28.05 50.82 101.63 50.82 70.75 0 111.79-26.42 111.79-73.18 0-58.66-45.16-56.5-151.63-63l13.43-21.55c27.27 7.58 118.7 10 118.7-67.89 0-18.7-7.73-31.71-15-41.07l37.41-2.84zm-63.42 241.9c0 32.06-104.89 32.1-104.89 2.43 0-8.14 5.27-15 10.57-21.54 77.71 5.3 94.32 3.37 94.32 19.11m-50.81-134.58c-52.8 0-50.46-71.16 1.2-71.16 49.54 0 50.82 71.16-1.2 71.16m133.3 100.51v-32.1c26.75-3.66 27.24-2 27.24-11V203.61c0-8.5-2.05-7.38-27.24-16.26l4.47-32.92H324v168.71c0 6.51.4 7.32 6.51 8.14l20.73 2.84v32.1zm52.45-244.31c-23.17 0-36.59-13.43-36.59-36.61s13.42-35.77 36.59-35.77c23.58 0 37 12.62 37 35.77s-13.42 36.61-37 36.61M512 350.46c-17.49 8.53-43.1 16.26-66.28 16.26-48.38 0-66.67-19.5-66.67-65.46V194.75c0-5.42 1.05-4.06-31.71-4.06V154.5c35.78-4.07 50-22 54.47-66.27h38.63c0 65.83-1.34 61.81 3.26 61.81H501v40.65h-60.56v97.15c0 6.92-4.92 51.41 60.57 26.84z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    maximsamokhval/archiDocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Начало
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1С Разработка
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            1С Разработка
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1CDevelopment/modeling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Моделирование
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1CDevelopment/rec_of_structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Проектирование
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1CDevelopment/Vliyanie_ogranichenij_dliny_klyucha_indeksov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ограничения
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Development
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Software Estimation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Software Estimation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Определение оценки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вероятностные оценки
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Точность оценки
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Точность оценки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Опасность переоценки:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Источники ошибок оценки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Этапы оценки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Декомпозиция
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оценка в промежуточных показателях
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Переход к непосредственным показателям
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Индивидуальные экспертные оценки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Уточнение оценки с помощью группового обсуждения
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Оценочные программы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Сравнение альтернативных оценок
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      Уточнение оценки по ходу работы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Представление оценки
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Политика: как избежать проблем из-за сроков
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Материалы
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ADR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            ADR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/ADR/000%20adr-example/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    000 - Использование ADR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/ADR/001%20adr%20template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    001 - Шаблон ADR (Архитектурного Решения)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/Notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Заметки
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Документы
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Документы
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/Documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Список документов
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/Documents/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BE-%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D0%B8-%D0%B8-%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%D1%85-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Документ о концепции и границах проекта
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    NFR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            NFR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/NFR/Template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NFR template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Шаблоны
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Шаблоны
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Templates/InterviewQuestions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Список вопросов при сборе требований
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Атрибуты качества
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Атрибуты качества
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Список атрибутов
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/constraint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ограничения
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_3" id="__nav_4_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Внешние аттрибуты качества
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Внешние аттрибуты качества
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/availability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Availability ( Доступность )
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/installability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installability ( удобство установки )
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/integrity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrity (Целостность)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/interoperability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    interoperability (Совместимость)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Perforamnce (Производительность)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/reliability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reliability (Надежность)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/robustness/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robustness (Устойчивость)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/safety/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Safety (Защита)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/secutity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security (Безопасность)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/ExtrenalAttributes/usability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usability (Удобство использования)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_4" id="__nav_4_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Внутренние аттрибуты качества
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Внутренние аттрибуты качества
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/InternalAttributes/modifiability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modifiability (Возможность модификации)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/InternalAttributes/efficiency/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Efficiency (Эффективность)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/InternalAttributes/portability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Portability (Переносимость)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/InternalAttributes/reusability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reusability (Возможность повторного использования)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/InternalAttributes/scalability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scalability (Масштабируемость)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/QualityAttributes/InternalAttributes/verifyability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Verifyability (Проверяемость)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RFC Template
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            RFC Template
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/RFC/rfc-template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Шаблон
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/RFC/rfc-taskManager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RFC taskManager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wiki
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Wiki
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Терминология
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Терминология
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wiki/orto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ортогональность
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Wiki/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Глоссарий
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="software-estimation-demystifying-the-black-art">Конспект «Software Estimation: Demystifying the Black Art»<a class="headerlink" href="#software-estimation-demystifying-the-black-art" title="Permanent link">&para;</a></h1>
+<p>Каждый раз, когда начальник или заказчик обсуждает новую задачу с программистами, звучит вопрос: сколько времени потребуется на разработку? Ответить на него сложно. Часто разработчики с ходу дают оценку, которая оказывается неверной и приводит к проваленным срокам.</p>
+<p><img alt="" src="../img/software-estimation-cover.jpg" /></p>
+<p>Об этом один из главных советов Стива Макконнелла в «Software Estimation: Demystifying the Black Art»: никогда не следует давать необдуманную оценку. Лучше взять время и дать хорошую оценку, по которой разработка будет спланирована более реалистично. В книге Макконнелл рассказывает, как правильно оценивать сроки и стоимость разработки и как обсуждать эти оценки. Некоторые из его идей я пересказываю ниже в своем конспекте.</p>
+<p>Техники из «Software Estimation» рассчитаны скорее на небольшие и средние проекты. Оценке крупных проектов объемом в сотни человеко-лет посвящены более серьезные книги и статьи в научных журналах.</p>
+<p>Хотя знания из книги полезны, организация материала оставляет такое же ощущение, как плохой код, который хочется взять и отрефакторить. Макконнелл представляет все техники как самостоятельные методы оценки, но иногда они бывают только одной составляющей процесса, и ему приходится делать отсылки к предыдущим и последующим главам. Требуется приложить усилия, чтобы понять, как применять описанное, и представить себе процесс оценки полностью. Я в конспекте изменил последовательность изложения на ту, которая мне показалась более естественной.</p>
+<h2 id="_1">Определение оценки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Не путайте оценки, цели и обязательства:</p>
+<p><strong>Оценка</strong> — прогноз затрат времени или денег. (Проект с большой вероятностью может быть завершен в июне-июле.)
+<strong>Цель</strong> — сформулированная бизнес-задача. (Программу нужно показать на выставке 1 сентября.)</p>
+<p><strong>Обязательство</strong> — обещание предоставить функциональность с заданным качеством к конкретной дате. (Проект будет сдан не позже 1 августа.)
+Желаемые цели могут быть недостижимы, а взятые обязательства — включать запас времени или не укладываться в оценку. Результатом оценки должен быть точный прогноз, а не соответствие целям и обязательствам. По этой же причине следует разделять оценку и планирование, цель которого — достижение заданного результата, а не получение объективной информации о стоимости проекта.</p>
+<p>Смешивание оценок, целей, обязательств и планов часто становится причиной конфликтов.</p>
+<p>Хорошая оценка должна нести пользу. Иногда начальству важнее узнать не то, что заданный объем задач в нужный срок выполнить невозможно, а то, что проект можно завершить в нужный срок, если изменить объем задач.</p>
+<p>Когда цель и оценка расходятся в пределах 20%, руководитель проекта может достичь цели, меняя набор функциональности, размер группы, сроки и так далее. Если расхождение больше, незначительные изменения не помогут.</p>
+<h2 id="_2">Вероятностные оценки<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Точечная оценка (около двадцати недель) дает мало информации. Неясно, насколько вероятно получить такой результат. Лучше, чтобы оценка содержала вероятность (20 недель с вероятностью 70%) или выражалась в виде диапазона (от 16 недель в лучшем случае до 24 в худшем).</p>
+<p>При этом оценщики обычно испытывают желание сузить диапазоны. Диапазоны с вероятностью 90% оказываются верными только в 60% случаев. Поэтому не стоит указывать вероятность оценки, если ее не подкрепляют численные методы.</p>
+<p>При отсутствии явного указания диапазона в расчет будет браться четкость (precision), то есть количество значащих цифр. «1 год», «4 квартала», «13 месяцев», «392 дней» — одна оценка в разных форматах воспринимается по-разному. Поэтому четкость оценки должна соответствовать точности.</p>
+<h2 id="_3">Точность оценки<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Есть два вида ошибок оценки — переоценка и недооценка.</p>
+<h3 id="_4">Опасность переоценки:<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Закон Паркинсона — работа занимает всё отведенное время.
+«Студенческий синдром» Голдратта — разработчики работают спустя рукава, а в конце начинается аврал.
+Опасность недооценки:</p>
+<p>Снижается эффективность планирования. Из-за недооценки можно ошибиться с размером группы или заставить одну группу простаивать в ожидании другой.
+Уменьшается время, отводимое на постановку требований и проектирование. Плохая архитектура еще больше затягивает работу.
+При переходе проекта в состояние «опоздания» приходится тратить время на дополнительные действия — встречи с начальством для обсуждения хода работы, подготовку новых оценок, общение с клиентами по поводу нарушения срока поставки, решение проблем с «костылями», вставленными из-за поджимающих сроков.
+Потери от закона Паркинсона линейны и ограничены — работа занимает всё отведенное время, но не более. Потери от недооценки нелинейны и неограничены, их нельзя предсказать.</p>
+<p>Но хотя переоценка и не так опасна, как недооценка, нужно стремиться к точности. Преимущества точной оценки:</p>
+<p>Состояние проекта можно отслеживать, сравнивая оценку и текущй результат.
+Не появляются ошибки и костыли из-за приближения дедлайна.
+Улучшается координация разработки с тестированием, документированием, маркетингом и другими видами деятельности.
+Увеличивается точность оценки бюджета.
+Повышается доверие к группе разработчиков.
+Появляется возможность заранее принять корректировочные меры при несоответствии оценки и целей. (Надо сделать за четыре месяца, а возможно только за шесть ⇒ урезаем функциональность.)</p>
+<h3 id="_5">Источники ошибок оценки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Неопределенность в требуемой функциональности. По мере продвижения работы над проектом неопределенность уменьшается, и оценка улучшается. Это называется конусом неопределенности.</p>
+<p><img alt="" src="../img/cone.png" /></p>
+<p>Конус неопределенности отражает лучшую оценку, которую можно получить на этом этапе. Реальная оценка может быть только менее точной.</p>
+<p>Единственный способ сокращения неопределенности в оценке — сокращение ее в проекте. Сжатие конуса происходит благодаря принятию решений.</p>
+<p>При итеративной разработке небольшой конус появляется в начале каждой итерации.</p>
+<p><strong>Нестабильные требования.</strong> Они не дают конусу сузиться. При изменении требований на поздней стадии конус становится таким:</p>
+<p><img alt="" src="../img/badcone.jpg" /></p>
+<p>Нельзя оставлять оценку прежней, если требования меняются.</p>
+<p>Если требования меняются постоянно, нужно менять методологию управления, а не улучшать оценку.</p>
+<p>Можно заложить какое-то количество изменений в требованиях. Конус неопределенности с учетом 50%-ного роста требований:</p>
+<p><img alt="" src="../img/cone-with-changes.png" /></p>
+<p><strong>Плохое управление процессом разработки.</strong> Слабый анализ требований, плохое проектирование, недостаточная квалификация работников и так далее. Невозможно точно оценивать процесс, который нельзя контролировать. Важнее избавиться от хаоса в управлении, чем улучшать оценку.</p>
+<p><strong>Неучтенные задачи.</strong> Их три вида:</p>
+<p>неучтенные функциональные и нефункциональные требования (программа-установщик, обеспечение безопасности);
+неучтенные действия по разработке (настройка системы сборки, исправление багов);
+неучтенные действия, не связанные с разработкой (болезни, решение технических проблем).
+В книге есть большой список задач каждого вида. Использование его в качестве чеклиста улучшает оценку.</p>
+<p><strong>Необоснованный оптимизм.</strong> Оценки разработчиков обычно содержат допуск на оптимизм от 20% до 30%.</p>
+<p><strong>Субъективность.</strong> Часто на оценщиков давят, чтобы оценки соответствовали целям бизнеса.</p>
+<h3 id="_6">Этапы оценки<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Процесс оценки состоит из следующих этапов:</p>
+<p>Декомпозиция проекта на части.
+Оценка каждой части в промежуточных показателях (пункты ТЗ, строки кода).
+Переход к непосредственным показателям (времени, срокам или стоимости).
+Для экономии времени можно положиться на экспертную оценку и пропустить первый или второй этап — оценивать сразу весь проект или сразу в человеко-днях. Но это даст менее точный результат.</p>
+<h3 id="_7">Декомпозиция<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>Декомпозиция — это разделение оценки на фрагменты, и оценка фрагментов по отдельности. Размер фрагментов зависит от этапа работы над проектом: чем дальше, тем они могут быть меньше.</p>
+<p><a href="http://en.wikipedia.org/wiki/Work_breakdown_structure">Work breakdown structure</a> — подход к декомпозиции работы.</p>
+<p>Завышения и занижения отдельных оценок компенсируют друг друга в итоговой общей оценке.</p>
+<p>При получении сводной оценки вычисляются оценки лучшего и худшего случаев. Формулы для получения этих оценок с различной достоверностью приведены в книге.</p>
+<h3 id="_8">Оценка в промежуточных показателях<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>Выбранные промежуточные показатели должны высоко коррелировать с размером проекта. Это могут быть требования, пользовательские истории, функциональные пункты, страницы сайта, диалоговые окна, таблицы БД, стандартные компоненты и так далее.</p>
+<p>Хорошо, если показатель доступен на раннем этапе работы над проектом, — тогда его можно сразу взять и использовать, а не оценивать.</p>
+<p>Показатели могут быть и абстрактными. Например, это может быть условный размер фрагмента — «очень малый», «малый», «средний», «большой», «очень большой». При этом смежные категории должны отличаться как минимум вдвое. Сюда же относятся абстрактные рейтинги, используемые в планировочном покере.</p>
+<h3 id="_9">Переход к непосредственным показателям<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>Для преобразования опосредованных показателей (количество требований) в оценку нужны соответствующие данные (время реализации одного требования). Могут использоваться:</p>
+<p>Среднеотраслевые данные — данные других организаций по аналогичным проектам.
+Исторические данные — данные организации по прошлым проектам.
+Проектные данные — данные, полученные ранее в ходе оцениваемого проекта.
+Исторические данные конкретной организации повышают точность благодаря учету организационных факторов. Среднеотраслевые данные следует применять только когда их нет.</p>
+<p>Проще всего собирать исторические данные по проекту (размер проекта, объем работы, время, баги) в процессе работы над ним. Данные текущего проекта также помогут отследить динамику работы над ним и уточнить оценку на поздних этапах.</p>
+<p>При сборе данных требуется принять некоторые решения (учитывать ли комментарии в коде? учитывать ли праздничные выходные дни?). Само решение ни на что не влияет. Главное, чтобы при сборе для всех проектов использовался общий подход, а оценщики понимали этот подход. Например, если при сборе не учитывается большое количество сверхурочной работы, в следующие проекты тоже будут автоматически заложены овертаймы.</p>
+<p>По <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%BE-%D0%BC%D0%B5%D1%81%D1%8F%D1%86">закону Брукса</a>, с ростом размера проекта объем работы растет нелинейно. Поэтому нельзя использовать данные значительно больших или меньших по размеру проектов.</p>
+<h3 id="_10">Индивидуальные экспертные оценки<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>Для оценки компонентов программы как в промежуточных, так и в непосредственных показателях могут применяться индивидуальные экспертные оценки. Для этого используется <a href="https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique">методика PERT</a>.</p>
+<p>Эксперт дает для каждого компонета оценки для лучшего, наиболее вероятного и худшего случая. Согласно PERT, ожидаемый результат вычисляется по формуле:</p>
+<div class="highlight"><pre><span></span><code>ОжидаемыйСлучай = [ЛучшийСлучай + (4 × НаиболееВероятныйСлучай) + ХудшийСлучай] / 6
+</code></pre></div>
+<p>Иногда используют более пессимистичный вариант:</p>
+<div class="highlight"><pre><span></span><code>ОжидаемыйСлучай = [ЛучшийСлучай + (3 × НаиболееВероятныйСлучай) + (2 × ХудшийСлучай)] / 6
+</code></pre></div>
+<p>Чтобы улучшать оценки эксперта, нужно по результатам проекта проверять, вошел ли фактический результат в предсказанный диапазон, и вычислять величину относительной ошибки (MRE):</p>
+<div class="highlight"><pre><span></span><code>MRE = [(ФактическийРезультат – ОценкаРезультата) / ФактическийРезультат] × 100%
+</code></pre></div>
+<h3 id="_11">Уточнение оценки с помощью группового обсуждения<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>Ошибки в оценках, полученных при групповом обсуждении, в среднем в два раза меньше. Оно полезно на ранней стадии или при большом количестве факторов неопределенности.</p>
+<p>При групповом обсуждении выполняют три правила:</p>
+<p>Каждый оценивает по отдельности, а потом все встречаются для сравнения оценок.
+Разницу между результатами надо обсудить, нельзя просто принимать среднюю оценку.
+С итоговой оценкой должна согласиться вся группа.
+<a href="https://en.wikipedia.org/wiki/Wideband_delphi">Широкополосный дельфийский метод</a> предлагает структуру для группового обсуждения.</p>
+<p>Групповая оценка стоит дороже индивидуальной, потому что требует собраний и работы нескольких оценщиков. Обычно достаточно 3–5 человек.</p>
+<h3 id="_12">Оценочные программы<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>Существуют программы, предназначенные для вычисления оценки (например, COCOMO II). Они могут лучше человека смоделировать разброс в оценке, дать вероятностный диапазон, учесть издержки масштаба, учесть непредвиденное расширение требований, вычислить плановые показатели. Программы дают возможность быстро пересчитать показатели с другими входными условиями.</p>
+<p>Программы стоят дорого, иногда это объясняется наличием базы исторических данных. Но данные хотя бы по трем проектам, сделанным в этой же организации, гораздо полезнее.</p>
+<p>Оценочные программы могут выдать неверный результат из-за неверных предположений, неверной калибровки, внесения смещения при помощи коэффициентов. Результат всё равно нужно проверять на соответствие здравому смыслу.</p>
+<p>Оценку программы можно использовать для проверки в качестве одной из альтернативных оценок.</p>
+<h3 id="_13">Сравнение альтернативных оценок<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>Используйте несколько альтернативных методов оценки и проанализируйте совпадение или расхождение результатов.</p>
+<p>Если результаты различаются более, чем на 5%, нужно найти источник этого различия.</p>
+<h3 id="_14">Уточнение оценки по ходу работы<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>Проводите повторную оценку на разных этапах проекта.</p>
+<p>По мере продвижения работы можно переходить к более точным оценкам.</p>
+<p>Если оценка пересчитывается в результате нарушения промежуточных сроков, новая оценка должна основываться на фактическом ходе проекта, а не на изначальном плане.</p>
+<p>Заказчикам обычно не нравится увеличение оценки по ходу проекта. Лучше давать им оценку в виде диапазона, который будет постепенно уточняться.</p>
+<h3 id="_15">Представление оценки<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>Важной частью оценки являются задокументированные предположения, которые легли в ее основу. К ним относятся: обязательные и необязательные функции программы, глубина проработки функций, доступность ключевых ресурсов, зависимость от третьих сторон, основные неизвестные факторы, качество оценки, назначение оценки. Если какие-то из этих предположений не сбудутся, это станет основанием для пересмотра оценки.</p>
+<p>Если представить оценку в виде диапазона плюс/минус, то при прохождении по организации она может превратиться в точечную, иногда с усечением до минимума.</p>
+<p>Можно сразу квантифицировать риски — указать, как изменится оценка при нарушении каждого предположения (не получилось использовать код предыдущего проекта ⇒ +1,5 месяца).</p>
+<p>Оценки с коэффициентом достоверности можно представить в виде графика:</p>
+<p><img alt="" src="../img/estimation-graph.png" /></p>
+<h3 id="-">Политика: как избежать проблем из-за сроков<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<p>Часто руководство беспокоится о внешних факторах, которые требуют сдать проект в указанный срок или уложиться в заданный бюджет. Нужно понимать эти факторы и показывать понимание.</p>
+<p>Не нужно обсуждать оценки — они являются результатом анализа и не могут измениться. Обсуждайте обязательства, принимаемые на основе оценки.</p>
+<p>Разработчики часто беспокоятся, что высокая оценка приведет к отклонению проекта. Это нормально. Занизив оценку, они заставят руководство принять неверное решение.</p>
+<p>В ходе переговоров можно прийти к решениям, которые позволят достичь целей без взятия нереалистичных обязательств. Это может быть исключение некоторых функций, их приоритезация, привлечение дополнительных ресурсов. Разработчик должен предложить варианты планирования, поддерживающие цели организации.</p>
+<p>Эти варианты должны быть продуманы заранее. В процессе обсуждения не следует давать необдуманных оценок.</p>
+<div class="admonition info">
+<p class="admonition-title">Источник</p>
+<ul>
+<li><a href="http://igorshevchenko.ru/blog/entries/software-estimation">Конспект «Software Estimation: Demystifying the Black Art»</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 Maxim Samokhval
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://t.me/maksym_samokhval" target="_blank" rel="noopener" title="Telegram me" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M248 8C111.033 8 0 119.033 0 256s111.033 248 248 248 248-111.033 248-248S384.967 8 248 8m114.952 168.66c-3.732 39.215-19.881 134.378-28.1 178.3-3.476 18.584-10.322 24.816-16.948 25.425-14.4 1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25 5.342-39.5 3.652-3.793 67.107-61.51 68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608 69.142-14.845 10.194-26.894 9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7 18.45-13.7 108.446-47.248 144.628-62.3c68.872-28.647 83.183-33.623 92.511-33.789 2.052-.034 6.639.474 9.61 2.885a10.45 10.45 0 0 1 3.53 6.716 43.8 43.8 0 0 1 .417 9.769"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/maximsamokhval" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.top", "navigation.tabs", "navigation.sections", "navigation.instant", "navigation.tracking", "header.autohide", "announce.dismiss", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../optionalConfig.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.8.4/dist/mermaid.min.js"></script>
+      
+        <script src="../extra-loader.js"></script>
+      
+    
+  </body>
+</html>
