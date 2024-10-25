@@ -106,6 +106,7 @@ nav:
   - Development:
       - Software Estimation: Development/index.md
   - Architecture:
+      - Шаблоны: Templates/InterviewQuestions.md
       - Материалы: Architecture/index.md
       - Заметки: Architecture/Notes/index.md
       - Документы:
